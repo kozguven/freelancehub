@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategoriler | FreelanceHub</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/categories.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">freelancehub</a>
+                <div class="nav-search">
+                    <input type="text" placeholder="Hangi hizmeti arıyorsunuz?">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Kategoriler <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="categories.html">Grafik & Tasarım</a>
+                            <a href="categories.html">Dijital Pazarlama</a>
+                            <a href="categories.html">Yazılım & Teknoloji</a>
+                            <a href="categories.html">Yazı & Çeviri</a>
+                            <a href="categories.html">Video & Animasyon</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">TR <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">English</a>
+                            <a href="#">Deutsch</a>
+                            <a href="#">Español</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-item">Satıcı Ol</a>
+                    <a href="login.html" class="nav-item">Giriş Yap</a>
+                    <a href="register.html" class="btn-primary">Üye Ol</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="categories-banner">
+            <div class="container">
+                <h1>Kategoriler</h1>
+                <p>İhtiyacınız olan hizmetleri kategoriler halinde keşfedin</p>
+            </div>
+        </section>
+
+        <section class="categories-filters">
+            <div class="container">
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <span class="filter-label">Sıralama:</span>
+                        <select class="filter-select">
+                            <option value="popular">Popülerlik</option>
+                            <option value="newest">En Yeni</option>
+                            <option value="price-low">Fiyat: Düşükten Yükseğe</option>
+                            <option value="price-high">Fiyat: Yüksekten Düşüğe</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Fiyat Aralığı:</span>
+                        <select class="filter-select">
+                            <option value="all">Tümü</option>
+                            <option value="0-100">0₺ - 100₺</option>
+                            <option value="100-500">100₺ - 500₺</option>
+                            <option value="500-1000">500₺ - 1000₺</option>
+                            <option value="1000+">1000₺ ve üzeri</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories-list">
+            <div class="container">
+                <div class="categories-grid">
+                    <a href="category-detail.html" class="category-item">
+                        <div class="category-image">
+                            <img src="https://placehold.co/600x400" alt="Grafik & Tasarım">
+                        </div>
+                        <div class="category-content">
+                            <h2>Grafik & Tasarım</h2>
+                            <p>Logo tasarımı, marka kimliği, UI/UX tasarımı ve daha fazlası</p>
+                            <div class="category-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    1,234 Uzman
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    3,567 İş
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="category-detail.html" class="category-item">
+                         <div class="category-image">
+                             <img src="https://placehold.co/600x400" alt="Dijital Pazarlama">
+                         </div>
+                         <div class="category-content">
+                             <h2>Dijital Pazarlama</h2>
+                             <p>SEO, sosyal medya yönetimi, içerik pazarlama ve reklam kampanyaları</p>
+                             <div class="category-stats">
+                                 <span class="stat-item">
+                                     <i class="fas fa-user-tie"></i>
+                                     987 Uzman
+                                 </span>
+                                 <span class="stat-item">
+                                     <i class="fas fa-briefcase"></i>
+                                     2,456 İş
+                                 </span>
+                             </div>
+                         </div>
+                     </a>
+
+                     <a href="category-detail.html" class="category-item">
+                        <div class="category-image">
+                            <img src="https://placehold.co/600x400" alt="Yazılım & Teknoloji">
+                        </div>
+                        <div class="category-content">
+                            <h2>Yazılım & Teknoloji</h2>
+                            <p>Web geliştirme, mobil uygulama, yazılım çözümleri ve IT desteği</p>
+                            <div class="category-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    2,345 Uzman
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    5,678 İş
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="category-detail.html" class="category-item">
+                        <div class="category-image">
+                            <img src="https://placehold.co/600x400" alt="Yazı & Çeviri">
+                        </div>
+                        <div class="category-content">
+                            <h2>Yazı & Çeviri</h2>
+                            <p>İçerik yazarlığı, teknik yazarlık, çeviri ve düzenleme hizmetleri</p>
+                            <div class="category-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    876 Uzman
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    1,987 İş
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="category-detail.html" class="category-item">
+                         <div class="category-image">
+                             <img src="https://placehold.co/600x400" alt="Video & Animasyon">
+                         </div>
+                        <div class="category-content">
+                            <h2>Video & Animasyon</h2>
+                            <p>Video düzenleme, animasyon, motion graphics ve prodüksiyon</p>
+                            <div class="category-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    654 Uzman
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    1,432 İş
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="category-detail.html" class="category-item">
+                         <div class="category-image">
+                             <img src="https://placehold.co/600x400" alt="Müzik & Ses">
+                         </div>
+                        <div class="category-content">
+                            <h2>Müzik & Ses</h2>
+                            <p>Ses prodüksiyonu, müzik prodüksiyonu, seslendirme ve jingle</p>
+                            <div class="category-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    432 Uzman
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    987 İş
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Kategoriler</h4>
+                    <a href="categories.html">Grafik & Tasarım</a>
+                    <a href="categories.html">Dijital Pazarlama</a>
+                    <a href="categories.html">Yazılım & Teknoloji</a>
+                    <a href="categories.html">Yazı & Çeviri</a>
+                    <a href="categories.html">Video & Animasyon</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Hakkımızda</h4>
+                    <a href="#">Şirketimiz</a>
+                    <a href="#">Kariyer</a>
+                    <a href="#">Basın</a>
+                    <a href="#">İletişim</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Topluluk</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Forum</a>
+                    <a href="#">Podcast</a>
+                    <a href="#">Affiliate Program</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Destek</h4>
+                    <a href="#">Yardım Merkezi</a>
+                    <a href="#">Güvenlik</a>
+                    <a href="#">Satıcı Rehberi</a>
+                    <a href="#">Alıcı Rehberi</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <span>© 2025 FreelanceHub. Tüm hakları saklıdır.</span>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

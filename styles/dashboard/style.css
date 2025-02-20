@@ -39,7 +39,7 @@
 }
 
 .menu-item.active {
-    background-color: #e9ecef;
+    background-color: rgba(13, 110, 253, 0.1);
     color: #0d6efd;
     border-right: 3px solid #0d6efd;
 }
@@ -67,6 +67,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .topbar-left h1 {
@@ -85,6 +86,11 @@
     position: relative;
     color: #6c757d;
     cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.notification-bell:hover {
+    color: #0d6efd;
 }
 
 .notification-badge {
@@ -103,6 +109,13 @@
     align-items: center;
     gap: 0.75rem;
     cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.user-menu:hover {
+    background-color: #f8f9fa;
 }
 
 .user-avatar {
@@ -122,63 +135,99 @@
 
 .dashboard-card {
     background-color: #fff;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 1rem;
 }
 
 .card-title {
-    font-size: 1rem;
-    color: #495057;
+    font-size: 0.875rem;
+    color: #6c757d;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .card-value {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
     color: #212529;
-    margin: 0;
+    margin: 0.5rem 0 0;
 }
 
 .card-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.card-icon i {
+    font-size: 1.25rem;
+}
+
+.dashboard-card:hover .card-icon {
+    transform: scale(1.05);
 }
 
 .card-icon.blue {
-    background-color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
 }
 
 .card-icon.green {
-    background-color: #198754;
+    background-color: rgba(25, 135, 84, 0.1);
+    color: #198754;
 }
 
 .card-icon.orange {
-    background-color: #fd7e14;
+    background-color: rgba(253, 126, 20, 0.1);
+    color: #fd7e14;
 }
 
 .card-icon.red {
-    background-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
 }
 
 /* Tables */
 .dashboard-table {
     background-color: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
+    margin-top: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-table .card-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e9ecef;
+    background-color: #fff;
+}
+
+.dashboard-table .card-header .card-title {
+    font-size: 1.1rem;
+    color: #212529;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
 .table {
@@ -188,7 +237,7 @@
 
 .table th,
 .table td {
-    padding: 1rem;
+    padding: 1.25rem 2rem;
     text-align: left;
     border-bottom: 1px solid #e9ecef;
 }
@@ -197,10 +246,17 @@
     background-color: #f8f9fa;
     font-weight: 600;
     color: #495057;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .table tr:last-child td {
     border-bottom: none;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
 }
 
 .table tbody tr:hover {
@@ -210,24 +266,30 @@
 /* Status Tags */
 .status-tag {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
     font-size: 0.875rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+.status-tag:hover {
+    transform: scale(1.05);
 }
 
 .status-active {
-    background-color: #d1e7dd;
-    color: #0f5132;
+    background-color: rgba(25, 135, 84, 0.1);
+    color: #198754;
 }
 
 .status-pending {
-    background-color: #fff3cd;
+    background-color: rgba(255, 193, 7, 0.1);
     color: #664d03;
 }
 
 .status-completed {
-    background-color: #cfe2ff;
-    color: #084298;
+    background-color: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
 }
 
 /* Responsive Design */
@@ -247,5 +309,10 @@
 
     .dashboard-cards {
         grid-template-columns: 1fr;
+    }
+
+    .table th,
+    .table td {
+        padding: 1rem;
     }
 }

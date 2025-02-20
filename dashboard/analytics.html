@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analitik | FreelanceHub</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Analytics specific styles */
+        .analytics-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .metric-title {
+            font-size: 1rem;
+            color: #6c757d;
+            margin: 0;
+        }
+
+        .metric-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d6efd;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-trend {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .trend-up {
+            color: #198754;
+        }
+
+        .trend-down {
+            color: #dc3545;
+        }
+
+        .analytics-chart {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .chart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #212529;
+            margin: 0;
+        }
+
+        .chart-period {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .period-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            background: none;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .period-btn.active {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(180deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-placeholder {
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .analytics-table {
+            margin-bottom: 2rem;
+        }
+
+        .table-header {
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #0d6efd;
+            border-radius: 4px;
+        }
+
+        .service-rank {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rank-number {
+            width: 24px;
+            height: 24px;
+            background-color: #e9ecef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .demographic-chart {
+            width: 100%;
+            height: 300px;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">freelancehub</a>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="orders.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    Siparişlerim
+                </a>
+                <a href="messages.html" class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    Mesajlar
+                </a>
+                <a href="services.html" class="menu-item">
+                    <i class="fas fa-briefcase"></i>
+                    Hizmetlerim
+                </a>
+                <a href="earnings.html" class="menu-item">
+                    <i class="fas fa-wallet"></i>
+                    Kazançlarım
+                </a>
+                <a href="analytics.html" class="menu-item active">
+                    <i class="fas fa-chart-bar"></i>
+                    Analitik
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    Profilim
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Ayarlar
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Bar -->
+            <div class="dashboard-topbar">
+                <div class="topbar-left">
+                    <h1>Analitik</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://placehold.co/40x40" alt="Profil" class="user-avatar">
+                        <span>Kerem Özgüven</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Metrics -->
+            <div class="analytics-metrics">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3 class="metric-title">Profil Görüntülenme</h3>
+                        <div class="metric-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="metric-value">1,234</div>
+                    <div class="metric-trend trend-up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>18% geçen haftaya göre</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3 class="metric-title">Mesaj Yanıt Oranı</h3>
+                        <div class="metric-icon">
+                            <i class="fas fa-reply"></i>
+                        </div>
+                    </div>
+                    <div class="metric-value">98%</div>
+                    <div class="metric-trend trend-up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>5% geçen aya göre</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3 class="metric-title">Ortalama Değerlendirme</h3>
+                        <div class="metric-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="metric-value">4.9</div>
+                    <div class="metric-trend">
+                        <span>234 değerlendirme</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3 class="metric-title">Zamanında Teslimat</h3>
+                        <div class="metric-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="metric-value">96%</div>
+                    <div class="metric-trend trend-down">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>2% geçen aya göre</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Charts -->
+            <div class="chart-grid">
+                <!-- Sales Chart -->
+                <div class="analytics-chart">
+                    <div class="chart-header">
+                        <h2 class="chart-title">Satış Trendi</h2>
+                        <div class="chart-period">
+                            <button class="period-btn">Haftalık</button>
+                            <button class="period-btn active">Aylık</button>
+                            <button class="period-btn">Yıllık</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <span class="chart-placeholder">[Satış grafiği buraya]</span>
+                    </div>
+                </div>
+
+                <!-- Orders Chart -->
+                <div class="analytics-chart">
+                    <div class="chart-header">
+                        <h2 class="chart-title">Sipariş Dağılımı</h2>
+                    </div>
+                    <div class="chart-container">
+                        <span class="chart-placeholder">[Sipariş pasta grafiği buraya]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Services -->
+            <div class="analytics-table">
+                <div class="chart-header">
+                    <h2 class="chart-title">Popüler Hizmetler</h2>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Hizmet</th>
+                            <th>Sipariş</th>
+                            <th>Kazanç</th>
+                            <th>Performans</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="service-rank">
+                                    <span class="rank-number">1</span>
+                                    Logo Tasarımı
+                                </div>
+                            </td>
+                            <td>124</td>
+                            <td>₺93,000</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="service-rank">
+                                    <span class="rank-number">2</span>
+                                    Web Tasarım
+                                </div>
+                            </td>
+                            <td>89</td>
+                            <td>₺222,500</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="service-rank">
+                                    <span class="rank-number">3</span>
+                                    SEO Hizmeti
+                                </div>
+                            </td>
+                            <td>76</td>
+                            <td>₺91,200</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Customer Demographics -->
+            <div class="analytics-chart">
+                <div class="chart-header">
+                    <h2 class="chart-title">Müşteri Demografisi</h2>
+                </div>
+                <div class="demographic-chart">
+                    <span class="chart-placeholder">[Demografi grafiği buraya]</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

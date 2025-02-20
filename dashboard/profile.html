@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilim | FreelanceHub</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Profile specific styles */
+        .profile-header {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .profile-cover {
+            height: 200px;
+            background: linear-gradient(120deg, #0d6efd, #0099ff);
+            border-radius: 0.5rem;
+            margin-bottom: -60px;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: flex-end;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            background-color: #fff;
+        }
+
+        .profile-details {
+            flex: 1;
+            padding-bottom: 1rem;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #212529;
+            margin: 0;
+        }
+
+        .profile-title {
+            color: #6c757d;
+            margin: 0.5rem 0;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .stat-label {
+            color: #6c757d;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-edit {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+        }
+
+        .btn-preview {
+            background-color: transparent;
+            color: #0d6efd;
+            border: 1px solid #0d6efd;
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .content-main {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .content-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .profile-section {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #212529;
+            margin: 0;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .overlay-icon {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .review-card {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .review-card:last-child {
+            border-bottom: none;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .reviewer-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .review-date {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+
+        .review-rating {
+            color: #ffc107;
+        }
+
+        .review-content {
+            color: #6c757d;
+            margin: 0;
+        }
+
+        .location-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6c757d;
+        }
+
+        .languages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .language-name {
+            color: #212529;
+        }
+
+        .language-level {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">freelancehub</a>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="orders.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    Siparişlerim
+                </a>
+                <a href="messages.html" class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    Mesajlar
+                </a>
+                <a href="services.html" class="menu-item">
+                    <i class="fas fa-briefcase"></i>
+                    Hizmetlerim
+                </a>
+                <a href="earnings.html" class="menu-item">
+                    <i class="fas fa-wallet"></i>
+                    Kazançlarım
+                </a>
+                <a href="analytics.html" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    Analitik
+                </a>
+                <a href="profile.html" class="menu-item active">
+                    <i class="fas fa-user"></i>
+                    Profilim
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Ayarlar
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Bar -->
+            <div class="dashboard-topbar">
+                <div class="topbar-left">
+                    <h1>Profilim</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://placehold.co/40x40" alt="Profil" class="user-avatar">
+                        <span>Kerem Özgüven</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-cover"></div>
+                <div class="profile-info">
+                    <img src="https://placehold.co/120x120" alt="Profil" class="profile-avatar">
+                    <div class="profile-details">
+                        <h2 class="profile-name">Kerem Özgüven</h2>
+                        <p class="profile-title">UI/UX Tasarımcı & Front-end Geliştirici</p>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">4.9</span>
+                                <span class="stat-label">Puan (234 değerlendirme)</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">156</span>
+                                <span class="stat-label">Tamamlanan İş</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-btn btn-edit">Profili Düzenle</button>
+                        <button class="action-btn btn-preview">Profili Görüntüle</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <!-- Main Content -->
+                <div class="content-main">
+                    <!-- About Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">Hakkımda</h3>
+                            <button class="action-btn btn-edit">Düzenle</button>
+                        </div>
+                        <p>5 yıllık deneyime sahip UI/UX tasarımcısı ve front-end geliştiricisiyim. Modern ve kullanıcı dostu arayüzler tasarlıyor, web standartlarına uygun kodlama yapıyorum. Responsive tasarım, mobil öncelikli yaklaşım ve performans optimizasyonu konularında uzmanım.</p>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">Uzmanlık Alanları</h3>
+                            <button class="action-btn btn-edit">Düzenle</button>
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-tag">UI/UX Tasarım</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">Web Animation</span>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">Portföyo</h3>
+                            <button class="action-btn btn-edit">Düzenle</button>
+                        </div>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item">
+                                <img src="https://placehold.co/400x300" alt="Proje 1" class="portfolio-image">
+                                <div class="portfolio-overlay">
+                                    <i class="fas fa-eye overlay-icon"></i>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="https://placehold.co/400x300" alt="Proje 2" class="portfolio-image">
+                                <div class="portfolio-overlay">
+                                    <i class="fas fa-eye overlay-icon"></i>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="https://placehold.co/400x300" alt="Proje 3" class="portfolio-image">
+                                <div class="portfolio-overlay">
+                                    <i class="fas fa-eye overlay-icon"></i>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="https://placehold.co/400x300" alt="Proje 4" class="portfolio-image">
+                                <div class="portfolio-overlay">
+                                    <i class="fas fa-eye overlay-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">Değerlendirmeler</h3>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer">
+                                    <img src="https://placehold.co/40x40" alt="Değerlendiren" class="reviewer-avatar">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Ahmet Yılmaz</span>
+                                        <span class="review-date">15 Şubat 2025</span>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-content">Harika iş çıkardı! İstediğimiz tasarımı tam olarak anladı ve çok profesyonel bir şekilde teslim etti. İletişimi güçlü ve zamanında teslim konusunda çok titiz.</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer">
+                                    <img src="https://placehold.co/40x40" alt="Değerlendiren" class="reviewer-avatar">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Ayşe Demir</span>
+                                        <span class="review-date">10 Şubat 2025</span>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-content">Modern ve kullanıcı dostu bir arayüz tasarladı. Revizyon taleplerimize hızlı dönüş yaptı. Kesinlikle tavsiye ederim.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Content -->
+                <div class="content-sidebar">
+                    <!-- Location Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">Konum</h3>
+                            <button class="action-btn btn-edit">Düzenle</button>
+                        </div>
+                        <div class="location-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>İstanbul, Türkiye</span>
+                        </div>
+                    </div>
+
+                    <!-- Languages Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">Diller</h3>
+                            <button class="action-btn btn-edit">Düzenle</button>
+                        </div>
+                        <div class="languages-list">
+                            <div class="language-item">
+                                <span class="language-name">Türkçe</span>
+                                <span class="language-level">Anadil</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">İngilizce</span>
+                                <span class="language-level">İleri Seviye</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">Almanca</span>
+                                <span class="language-level">Orta Seviye</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">Eğitim</h3>
+                            <button class="action-btn btn-edit">Düzenle</button>
+                        </div>
+                        <div class="education-item">
+                            <h4>İstanbul Teknik Üniversitesi</h4>
+                            <p>Bilgisayar Mühendisliği</p>
+                            <span>2018 - 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

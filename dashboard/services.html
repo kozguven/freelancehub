@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerim | FreelanceHub</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Services specific styles */
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .add-service-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-service-btn:hover {
+            background-color: #0b5ed7;
+        }
+
+        .services-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            flex: 1;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            color: #495057;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #212529;
+            margin: 0;
+        }
+
+        .service-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .service-action {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-action.edit {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .service-action.delete {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .service-action:hover {
+            opacity: 0.9;
+        }
+
+        .service-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+
+        .service-price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #198754;
+            margin-top: 1rem;
+        }
+
+        .service-status {
+            margin-top: 1rem;
+        }
+
+        .service-description {
+            color: #6c757d;
+            margin: 1rem 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">freelancehub</a>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="orders.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    Siparişlerim
+                </a>
+                <a href="messages.html" class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    Mesajlar
+                </a>
+                <a href="services.html" class="menu-item active">
+                    <i class="fas fa-briefcase"></i>
+                    Hizmetlerim
+                </a>
+                <a href="earnings.html" class="menu-item">
+                    <i class="fas fa-wallet"></i>
+                    Kazançlarım
+                </a>
+                <a href="analytics.html" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    Analitik
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    Profilim
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Ayarlar
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Bar -->
+            <div class="dashboard-topbar">
+                <div class="topbar-left">
+                    <h1>Hizmetlerim</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://placehold.co/40x40" alt="Profil" class="user-avatar">
+                        <span>Kerem Özgüven</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Content -->
+            <div class="services-header">
+                <div class="services-filters">
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="all">Tüm Kategoriler</option>
+                            <option value="design">Grafik & Tasarım</option>
+                            <option value="marketing">Dijital Pazarlama</option>
+                            <option value="software">Yazılım & Teknoloji</option>
+                            <option value="writing">Yazı & Çeviri</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="active">Aktif Hizmetler</option>
+                            <option value="draft">Taslaklar</option>
+                            <option value="paused">Duraklatılmış</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="add-service-btn">
+                    <i class="fas fa-plus"></i>
+                    Yeni Hizmet Ekle
+                </button>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card">
+                    <img src="https://placehold.co/600x400" alt="Logo Tasarımı" class="service-image">
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">Modern Logo Tasarımı</h3>
+                            <div class="service-actions">
+                                <button class="service-action edit" title="Düzenle">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="service-action delete" title="Sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="service-description">Markanız için minimalist ve modern logo tasarımları. Sınırsız revizyon.</p>
+                        <div class="service-price">₺750'den başlayan</div>
+                        <div class="service-status">
+                            <span class="status-tag status-active">Aktif</span>
+                        </div>
+                        <div class="service-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">54</span>
+                                <span class="stat-label">Aktif Sipariş</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">4.9</span>
+                                <span class="stat-label">Puan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card">
+                    <img src="https://placehold.co/600x400" alt="Web Tasarım" class="service-image">
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">Responsive Web Tasarımı</h3>
+                            <div class="service-actions">
+                                <button class="service-action edit" title="Düzenle">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="service-action delete" title="Sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="service-description">Modern ve mobil uyumlu web siteleri. SEO dostu ve hızlı.</p>
+                        <div class="service-price">₺2,500'den başlayan</div>
+                        <div class="service-status">
+                            <span class="status-tag status-active">Aktif</span>
+                        </div>
+                        <div class="service-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">32</span>
+                                <span class="stat-label">Aktif Sipariş</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">4.8</span>
+                                <span class="stat-label">Puan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                    <img src="https://placehold.co/600x400" alt="SEO" class="service-image">
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">SEO Optimizasyonu</h3>
+                            <div class="service-actions">
+                                <button class="service-action edit" title="Düzenle">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="service-action delete" title="Sil">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="service-description">Google sıralamanızı yükseltin. Detaylı analiz ve raporlama.</p>
+                        <div class="service-price">₺1,200'den başlayan</div>
+                        <div class="service-status">
+                            <span class="status-tag status-pending">Taslak</span>
+                        </div>
+                        <div class="service-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">0</span>
+                                <span class="stat-label">Aktif Sipariş</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">-</span>
+                                <span class="stat-label">Puan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

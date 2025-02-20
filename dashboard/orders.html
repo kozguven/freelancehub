@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siparişlerim | FreelanceHub</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Orders specific styles */
+        .orders-header {
+            margin-bottom: 2rem;
+        }
+
+        .orders-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            flex: 1;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            color: #495057;
+        }
+
+        .order-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .order-tab {
+            padding: 1rem 2rem;
+            color: #6c757d;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .order-tab:hover {
+            color: #0d6efd;
+        }
+
+        .order-tab.active {
+            color: #0d6efd;
+            border-bottom-color: #0d6efd;
+        }
+
+        .order-count {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #e9ecef;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+
+        .order-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-button {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button.view {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .action-button.cancel {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .action-button.message {
+            background-color: #198754;
+            color: white;
+        }
+
+        .action-button:hover {
+            opacity: 0.9;
+        }
+
+        .order-price {
+            font-weight: 600;
+            color: #198754;
+        }
+
+        .progress-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 6px;
+            background-color: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #0d6efd;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.875rem;
+            color: #6c757d;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">freelancehub</a>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="orders.html" class="menu-item active">
+                    <i class="fas fa-shopping-cart"></i>
+                    Siparişlerim
+                </a>
+                <a href="messages.html" class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    Mesajlar
+                </a>
+                <a href="services.html" class="menu-item">
+                    <i class="fas fa-briefcase"></i>
+                    Hizmetlerim
+                </a>
+                <a href="earnings.html" class="menu-item">
+                    <i class="fas fa-wallet"></i>
+                    Kazançlarım
+                </a>
+                <a href="analytics.html" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    Analitik
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    Profilim
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Ayarlar
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Bar -->
+            <div class="dashboard-topbar">
+                <div class="topbar-left">
+                    <h1>Siparişlerim</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://placehold.co/40x40" alt="Profil" class="user-avatar">
+                        <span>Kerem Özgüven</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Content -->
+            <div class="orders-header">
+                <div class="orders-filters">
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="all">Tüm Tarihler</option>
+                            <option value="today">Bugün</option>
+                            <option value="week">Bu Hafta</option>
+                            <option value="month">Bu Ay</option>
+                            <option value="year">Bu Yıl</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="all">Tüm Kategoriler</option>
+                            <option value="design">Grafik & Tasarım</option>
+                            <option value="marketing">Dijital Pazarlama</option>
+                            <option value="software">Yazılım & Teknoloji</option>
+                            <option value="writing">Yazı & Çeviri</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="order-tabs">
+                    <div class="order-tab active">
+                        Aktif Siparişler
+                        <span class="order-count">12</span>
+                    </div>
+                    <div class="order-tab">
+                        Tamamlanan
+                        <span class="order-count">156</span>
+                    </div>
+                    <div class="order-tab">
+                        İptal Edilen
+                        <span class="order-count">3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="dashboard-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Sipariş No</th>
+                            <th>Müşteri</th>
+                            <th>Hizmet</th>
+                            <th>Tutar</th>
+                            <th>İlerleme</th>
+                            <th>Teslim Tarihi</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1234</td>
+                            <td>Ahmet Yılmaz</td>
+                            <td>Logo Tasarımı</td>
+                            <td class="order-price">₺750</td>
+                            <td>
+                                <div class="progress-info">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span class="progress-text">75%</span>
+                                </div>
+                            </td>
+                            <td>23 Şub 2025</td>
+                            <td><span class="status-tag status-active">Aktif</span></td>
+                            <td>
+                                <div class="order-actions">
+                                    <button class="action-button view" title="Görüntüle">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-button message" title="Mesaj">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1233</td>
+                            <td>Mehmet Can</td>
+                            <td>Web Tasarım</td>
+                            <td class="order-price">₺2,500</td>
+                            <td>
+                                <div class="progress-info">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span class="progress-text">90%</span>
+                                </div>
+                            </td>
+                            <td>25 Şub 2025</td>
+                            <td><span class="status-tag status-active">Aktif</span></td>
+                            <td>
+                                <div class="order-actions">
+                                    <button class="action-button view" title="Görüntüle">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-button message" title="Mesaj">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1232</td>
+                            <td>Ayşe Demir</td>
+                            <td>SEO Hizmeti</td>
+                            <td class="order-price">₺1,200</td>
+                            <td>
+                                <div class="progress-info">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 30%"></div>
+                                    </div>
+                                    <span class="progress-text">30%</span>
+                                </div>
+                            </td>
+                            <td>28 Şub 2025</td>
+                            <td><span class="status-tag status-pending">Beklemede</span></td>
+                            <td>
+                                <div class="order-actions">
+                                    <button class="action-button view" title="Görüntüle">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-button message" title="Mesaj">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

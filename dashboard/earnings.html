@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazançlarım | FreelanceHub</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Earnings specific styles */
+        .earnings-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .earnings-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .earnings-card h3 {
+            font-size: 1rem;
+            color: #6c757d;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .earnings-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 0.5rem;
+        }
+
+        .earnings-trend {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .trend-up {
+            color: #198754;
+        }
+
+        .trend-down {
+            color: #dc3545;
+        }
+
+        .earnings-chart {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .chart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #212529;
+            margin: 0;
+        }
+
+        .chart-period {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .period-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            background: none;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .period-btn.active {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(180deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-placeholder {
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .transactions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .transaction-filters {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-select {
+            padding: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            color: #495057;
+        }
+
+        .transaction-amount {
+            font-weight: 600;
+        }
+
+        .amount-positive {
+            color: #198754;
+        }
+
+        .amount-negative {
+            color: #dc3545;
+        }
+
+        .transaction-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-completed {
+            background-color: #198754;
+        }
+
+        .status-pending {
+            background-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">freelancehub</a>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="orders.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    Siparişlerim
+                </a>
+                <a href="messages.html" class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    Mesajlar
+                </a>
+                <a href="services.html" class="menu-item">
+                    <i class="fas fa-briefcase"></i>
+                    Hizmetlerim
+                </a>
+                <a href="earnings.html" class="menu-item active">
+                    <i class="fas fa-wallet"></i>
+                    Kazançlarım
+                </a>
+                <a href="analytics.html" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    Analitik
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    Profilim
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Ayarlar
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Bar -->
+            <div class="dashboard-topbar">
+                <div class="topbar-left">
+                    <h1>Kazançlarım</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://placehold.co/40x40" alt="Profil" class="user-avatar">
+                        <span>Kerem Özgüven</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings Overview -->
+            <div class="earnings-overview">
+                <div class="earnings-card">
+                    <h3>Bu Ayki Kazanç</h3>
+                    <div class="earnings-value">₺4,850</div>
+                    <div class="earnings-trend trend-up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12% geçen aya göre</span>
+                    </div>
+                </div>
+                <div class="earnings-card">
+                    <h3>Bu Yılki Kazanç</h3>
+                    <div class="earnings-value">₺52,450</div>
+                    <div class="earnings-trend trend-up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>24% geçen yıla göre</span>
+                    </div>
+                </div>
+                <div class="earnings-card">
+                    <h3>Bekleyen Ödemeler</h3>
+                    <div class="earnings-value">₺2,150</div>
+                    <div class="earnings-trend">
+                        <span>5 aktif sipariş</span>
+                    </div>
+                </div>
+                <div class="earnings-card">
+                    <h3>Ortalama Sipariş Tutarı</h3>
+                    <div class="earnings-value">₺950</div>
+                    <div class="earnings-trend trend-up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>8% artış</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings Chart -->
+            <div class="earnings-chart">
+                <div class="chart-header">
+                    <h2 class="chart-title">Kazanç Grafiği</h2>
+                    <div class="chart-period">
+                        <button class="period-btn">Haftalık</button>
+                        <button class="period-btn active">Aylık</button>
+                        <button class="period-btn">Yıllık</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <span class="chart-placeholder">[Buraya grafik entegre edilecek]</span>
+                </div>
+            </div>
+
+            <!-- Recent Transactions -->
+            <div class="dashboard-table">
+                <div class="transactions-header">
+                    <h2 class="chart-title">Son İşlemler</h2>
+                    <div class="transaction-filters">
+                        <select class="filter-select">
+                            <option value="all">Tüm İşlemler</option>
+                            <option value="completed">Tamamlanan</option>
+                            <option value="pending">Bekleyen</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>İşlem No</th>
+                            <th>Tarih</th>
+                            <th>Müşteri</th>
+                            <th>Hizmet</th>
+                            <th>Tutar</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#TR1234</td>
+                            <td>18 Şub 2025</td>
+                            <td>Ahmet Yılmaz</td>
+                            <td>Logo Tasarımı</td>
+                            <td class="transaction-amount amount-positive">+₺750</td>
+                            <td>
+                                <div class="transaction-status">
+                                    <span class="status-icon status-completed"></span>
+                                    Tamamlandı
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TR1233</td>
+                            <td>17 Şub 2025</td>
+                            <td>Mehmet Can</td>
+                            <td>Web Tasarım</td>
+                            <td class="transaction-amount amount-positive">+₺2,500</td>
+                            <td>
+                                <div class="transaction-status">
+                                    <span class="status-icon status-completed"></span>
+                                    Tamamlandı
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TR1232</td>
+                            <td>16 Şub 2025</td>
+                            <td>Ayşe Demir</td>
+                            <td>SEO Hizmeti</td>
+                            <td class="transaction-amount amount-positive">+₺1,200</td>
+                            <td>
+                                <div class="transaction-status">
+                                    <span class="status-icon status-pending"></span>
+                                    Beklemede
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TR1231</td>
+                            <td>15 Şub 2025</td>
+                            <td>Platform Komisyonu</td>
+                            <td>Komisyon</td>
+                            <td class="transaction-amount amount-negative">-₺225</td>
+                            <td>
+                                <div class="transaction-status">
+                                    <span class="status-icon status-completed"></span>
+                                    Tamamlandı
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

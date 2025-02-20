@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayarlar | FreelanceHub</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Settings specific styles */
+        .settings-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 1.5rem;
+        }
+
+        .settings-nav {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .settings-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            color: #6c757d;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .settings-nav-item.active {
+            background-color: #e9ecef;
+            color: #0d6efd;
+        }
+
+        .settings-nav-item:hover {
+            background-color: #f8f9fa;
+            color: #0d6efd;
+        }
+
+        .settings-section {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #212529;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .section-description {
+            color: #6c757d;
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #212529;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            color: #495057;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: #0d6efd;
+            outline: none;
+        }
+
+        .form-helper {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+        }
+
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .toggle-track {
+            width: 48px;
+            height: 24px;
+            background-color: #e9ecef;
+            border-radius: 12px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-track.active {
+            background-color: #0d6efd;
+        }
+
+        .toggle-thumb {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-track.active .toggle-thumb {
+            transform: translateX(24px);
+        }
+
+        .toggle-label {
+            font-weight: 500;
+            color: #212529;
+        }
+
+        .notification-group {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .notification-group:last-child {
+            border-bottom: none;
+        }
+
+        .notification-title {
+            font-weight: 500;
+            color: #212529;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .notification-description {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin: 0 0 1rem 0;
+        }
+
+        .two-factor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .two-factor-info {
+            flex: 1;
+        }
+
+        .two-factor-title {
+            font-weight: 600;
+            color: #212529;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .two-factor-description {
+            color: #6c757d;
+            margin: 0;
+        }
+
+        .save-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .save-button:hover {
+            background-color: #0b5ed7;
+        }
+
+        .delete-account {
+            padding: 1.5rem;
+            background-color: #fff3f3;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .delete-title {
+            color: #dc3545;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .delete-description {
+            color: #6c757d;
+            margin: 0 0 1rem 0;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-button:hover {
+            background-color: #bb2d3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">freelancehub</a>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="orders.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    Siparişlerim
+                </a>
+                <a href="messages.html" class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    Mesajlar
+                </a>
+                <a href="services.html" class="menu-item">
+                    <i class="fas fa-briefcase"></i>
+                    Hizmetlerim
+                </a>
+                <a href="earnings.html" class="menu-item">
+                    <i class="fas fa-wallet"></i>
+                    Kazançlarım
+                </a>
+                <a href="analytics.html" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    Analitik
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    Profilim
+                </a>
+                <a href="settings.html" class="menu-item active">
+                    <i class="fas fa-cog"></i>
+                    Ayarlar
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Bar -->
+            <div class="dashboard-topbar">
+                <div class="topbar-left">
+                    <h1>Ayarlar</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://placehold.co/40x40" alt="Profil" class="user-avatar">
+                        <span>Kerem Özgüven</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="settings-container">
+                <!-- Settings Navigation -->
+                <nav class="settings-nav">
+                    <a href="#account" class="settings-nav-item active">
+                        <i class="fas fa-user"></i>
+                        Hesap Ayarları
+                    </a>
+                    <a href="#notifications" class="settings-nav-item">
+                        <i class="fas fa-bell"></i>
+                        Bildirimler
+                    </a>
+                    <a href="#privacy" class="settings-nav-item">
+                        <i class="fas fa-lock"></i>
+                        Gizlilik
+                    </a>
+                    <a href="#security" class="settings-nav-item">
+                        <i class="fas fa-shield-alt"></i>
+                        Güvenlik
+                    </a>
+                </nav>
+
+                <!-- Settings Content -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Hesap Ayarları</h2>
+                        <p class="section-description">Hesap bilgilerinizi güncelleyin ve tercihlerinizi yönetin.</p>
+                    </div>
+
+                    <!-- Account Settings Form -->
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">E-posta Adresi</label>
+                            <input type="email" class="form-input" value="kerem@example.com">
+                            <p class="form-helper">Bu e-posta adresi bildirimler için kullanılacak.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Kullanıcı Adı</label>
+                            <input type="text" class="form-input" value="keremozguven">
+                            <p class="form-helper">Profilinizde görünecek benzersiz kullanıcı adı.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Zaman Dilimi</label>
+                            <select class="form-input">
+                                <option value="europe/istanbul">İstanbul (GMT+3)</option>
+                                <option value="europe/london">Londra (GMT+0)</option>
+                                <option value="america/new_york">New York (GMT-5)</option>
+                            </select>
+                        </div>
+
+                        <!-- Privacy Settings -->
+                        <div class="form-group">
+                            <label class="toggle-switch">
+                                <div class="toggle-track active">
+                                    <div class="toggle-thumb"></div>
+                                </div>
+                                <span class="toggle-label">Profilimi herkese açık göster</span>
+                            </label>
+                        </div>
+
+                        <!-- Notification Preferences -->
+                        <div class="notification-group">
+                            <h3 class="notification-title">Bildirim Tercihleri</h3>
+                            <p class="notification-description">Hangi bildirimler için e-posta almak istediğinizi seçin.</p>
+
+                            <div class="form-group">
+                                <label class="toggle-switch">
+                                    <div class="toggle-track active">
+                                        <div class="toggle-thumb"></div>
+                                    </div>
+                                    <span class="toggle-label">Yeni mesajlar</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="toggle-switch">
+                                    <div class="toggle-track active">
+                                        <div class="toggle-thumb"></div>
+                                    </div>
+                                    <span class="toggle-label">Sipariş güncellemeleri</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="toggle-switch">
+                                    <div class="toggle-track">
+                                        <div class="toggle-thumb"></div>
+                                    </div>
+                                    <span class="toggle-label">Pazarlama e-postaları</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Security Settings -->
+                        <div class="two-factor">
+                            <div class="two-factor-info">
+                                <h3 class="two-factor-title">İki Faktörlü Doğrulama</h3>
+                                <p class="two-factor-description">Hesabınızı daha güvenli hale getirmek için iki faktörlü doğrulamayı etkinleştirin.</p>
+                            </div>
+                            <button type="button" class="save-button">Etkinleştir</button>
+                        </div>
+
+                        <!-- Save Changes -->
+                        <button type="submit" class="save-button">
+                            <i class="fas fa-save"></i>
+                            Değişiklikleri Kaydet
+                        </button>
+
+                        <!-- Delete Account -->
+                        <div class="delete-account">
+                            <h3 class="delete-title">Hesabı Sil</h3>
+                            <p class="delete-description">Hesabınızı silmek tüm verilerinizi kalıcı olarak silecektir. Bu işlem geri alınamaz.</p>
+                            <button type="button" class="delete-button">Hesabı Sil</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

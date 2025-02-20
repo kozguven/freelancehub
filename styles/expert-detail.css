@@ -1,0 +1,239 @@
+.expert-detail {
+    padding: 40px 0;
+}
+
+.expert-profile {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.expert-header {
+    display: flex;
+    padding: 32px;
+    border-bottom: 1px solid #eee;
+}
+
+.expert-avatar {
+    width: 200px;
+    height: 200px;
+    margin-right: 32px;
+    flex-shrink: 0;
+}
+
+.expert-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.expert-info {
+    flex: 1;
+}
+
+.expert-info h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.expert-title {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.expert-stats {
+    display: flex;
+    gap: 32px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-item i {
+    color: #ffd700;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 14px;
+}
+
+.expert-description {
+    padding: 32px;
+    border-bottom: 1px solid #eee;
+}
+
+.expert-description h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.expert-description p {
+    color: #444;
+    line-height: 1.6;
+}
+
+.expert-skills {
+    padding: 32px;
+    border-bottom: 1px solid #eee;
+}
+
+.expert-skills h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background: #f5f5f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #444;
+}
+
+.expert-portfolio {
+    padding: 32px;
+    border-bottom: 1px solid #eee;
+}
+
+.expert-portfolio h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 16px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.portfolio-overlay p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.expert-services {
+    padding: 32px;
+    border-bottom: 1px solid #eee;
+}
+
+.expert-services h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.expert-reviews {
+    padding: 32px;
+}
+
+.expert-reviews h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+.review-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.reviewer-avatar {
+    width: 48px;
+    height: 48px;
+}
+
+.reviewer-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviewer-info h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.review-date {
+    color: #666;
+    font-size: 14px;
+}
+
+.review-rating i {
+    color: #ffd700;
+    margin-left: 2px;
+}
+
+.review-content {
+    color: #444;
+    line-height: 1.6;
+}

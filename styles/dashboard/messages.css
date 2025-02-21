@@ -1,11 +1,10 @@
 /* Messages specific styles */
 .messages-container {
-    display: flex;
-    background-color: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    height: calc(100vh - 120px);
-    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1.5rem;
+    /* Dashboard içindeki main content alanının yüksekliği */
+    height: calc(100vh - 180px);
 }
 
 .messages-list {
@@ -58,7 +57,7 @@
 }
 
 .message-preview {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: #6c757d;
     white-space: nowrap;
     overflow: hidden;
@@ -84,17 +83,20 @@
 
 .chat-messages {
     flex: 1;
-    padding: 1rem;
+    padding: 1.5rem;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    /* Chat header (72px) ve input alanı (120px) yüksekliklerini çıkarıyoruz */
+    height: calc(100vh - 180px - 72px - 120px);
 }
 
 .chat-message {
     max-width: 70%;
     padding: 0.75rem 1rem;
     border-radius: 1rem;
+    font-size: 1rem;
 }
 
 .message-received {
@@ -109,14 +111,15 @@
 }
 
 .message-timestamp {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     margin-top: 0.25rem;
     opacity: 0.8;
 }
 
 .chat-input {
     padding: 1rem;
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid #dee2e6;
+    min-height: 120px;
 }
 
 .input-container {
@@ -131,6 +134,8 @@
     border-radius: 0.5rem;
     resize: none;
     min-height: 45px;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
 .send-button {
@@ -155,4 +160,33 @@
 
 .order-link:hover {
     text-decoration: underline;
+}
+
+.chat-section {
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Dashboard içindeki main content alanının yüksekliği */
+    height: calc(100vh - 180px);
+}
+
+/* Contacts bölümü için de yükseklik ayarı */
+.contacts-section {
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Dashboard içindeki main content alanının yüksekliği */
+    height: calc(100vh - 180px);
+    overflow: hidden;
+}
+
+.contacts-list {
+    flex: 1;
+    overflow-y: auto;
+    /* Chat header (72px) ve input alanı (120px) yüksekliklerini çıkarıyoruz */
+    height: calc(100vh - 180px - 60px);
 } 

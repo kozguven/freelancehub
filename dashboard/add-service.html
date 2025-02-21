@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmet Ekle | FreelanceHub</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard/style.css">
+    <link rel="stylesheet" href="../styles/dashboard/add-service.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">freelancehub</a>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="orders.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    Siparişlerim
+                </a>
+                <a href="messages.html" class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    Mesajlar
+                </a>
+                <a href="services.html" class="menu-item active">
+                    <i class="fas fa-briefcase"></i>
+                    Hizmetlerim
+                </a>
+                <a href="earnings.html" class="menu-item">
+                    <i class="fas fa-wallet"></i>
+                    Kazançlarım
+                </a>
+                <a href="analytics.html" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    Analitik
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    Profilim
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    Ayarlar
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Bar -->
+            <div class="dashboard-topbar">
+                <div class="topbar-left">
+                    <h1>Yeni Hizmet Ekle</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://placehold.co/40x40" alt="Profil" class="user-avatar">
+                        <span>Kerem Özgüven</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-service-container">
+                <p class="page-description">Müşterilerinize sunacağınız hizmetin detaylarını belirleyin</p>
+
+                <form class="add-service-form">
+                    <!-- Temel Bilgiler -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-info-circle"></i> Temel Bilgiler</h2>
+                        
+                        <div class="form-group">
+                            <label for="title">Hizmet Başlığı</label>
+                            <input type="text" id="title" placeholder="Örn: Modern Logo Tasarımı" required>
+                            <p class="form-helper">Hizmetinizi en iyi şekilde tanımlayan kısa bir başlık yazın</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="category">Kategori</label>
+                                <select id="category" required>
+                                    <option value="">Kategori Seçin</option>
+                                    <option value="design">Grafik & Tasarım</option>
+                                    <option value="marketing">Dijital Pazarlama</option>
+                                    <option value="tech">Yazılım & Teknoloji</option>
+                                    <option value="writing">Yazı & Çeviri</option>
+                                    <option value="video">Video & Animasyon</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="subcategory">Alt Kategori</label>
+                                <select id="subcategory" required>
+                                    <option value="">Alt Kategori Seçin</option>
+                                    <option value="logo">Logo Tasarımı</option>
+                                    <option value="brand">Kurumsal Kimlik</option>
+                                    <option value="social">Sosyal Medya Tasarımı</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Hizmet Açıklaması</label>
+                            <div class="rich-editor">
+                                <div class="editor-toolbar">
+                                    <button type="button" title="Kalın"><i class="fas fa-bold"></i></button>
+                                    <button type="button" title="İtalik"><i class="fas fa-italic"></i></button>
+                                    <button type="button" title="Liste"><i class="fas fa-list-ul"></i></button>
+                                    <button type="button" title="Bağlantı"><i class="fas fa-link"></i></button>
+                                </div>
+                                <textarea id="description" rows="5" placeholder="Hizmetinizi detaylı bir şekilde açıklayın..." required></textarea>
+                            </div>
+                            <p class="form-helper">Potansiyel müşterilerinize sunduğunuz hizmeti ve süreçleri açıklayın</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Anahtar Kelimeler</label>
+                            <div class="tags-input">
+                                <input type="text" placeholder="Etiket eklemek için yazın ve Enter'a basın">
+                                <div class="tags-container">
+                                    <!-- Etiketler buraya eklenecek -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Görseller -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-images"></i> Görseller ve Medya</h2>
+                        
+                        <div class="form-group">
+                            <label>Kapak Görseli</label>
+                            <div class="image-upload-area" id="coverUpload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Görsel yüklemek için tıklayın veya sürükleyin</p>
+                                <span>PNG, JPG veya JPEG • Maks 5MB</span>
+                                <input type="file" accept="image/*" hidden>
+                                <div class="image-preview"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Galeri Görselleri</label>
+                            <div class="gallery-upload-area" id="galleryUpload">
+                                <div class="gallery-grid">
+                                    <div class="gallery-item upload-box">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Görsel Ekle</span>
+                                    </div>
+                                </div>
+                                <input type="file" accept="image/*" multiple hidden>
+                            </div>
+                            <p class="form-helper">En fazla 6 adet görsel yükleyebilirsiniz</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Video Tanıtım</label>
+                            <div class="video-upload-area">
+                                <input type="text" placeholder="YouTube veya Vimeo video bağlantısı">
+                                <button type="button" class="btn-outline">
+                                    <i class="fas fa-link"></i>
+                                    Bağlantı Ekle
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paketler -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-box"></i> Paketler</h2>
+                        <p class="section-description">Müşterilerinize sunacağınız farklı paket seçeneklerini belirleyin</p>
+                        <div class="packages-container">
+                            <div class="package-card">
+                                <div class="package-header">
+                                    <h3>Başlangıç Paketi</h3>
+                                    <div class="package-price">
+                                        <label>Paket Fiyatı</label>
+                                        <div class="price-input">
+                                            <span class="currency">₺</span>
+                                            <input type="number" placeholder="0" min="0" step="1" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="package-content">
+                                    <div class="package-description">
+                                        <label>Paket Açıklaması</label>
+                                        <textarea rows="2" placeholder="Bu pakette neler sunuyorsunuz?"></textarea>
+                                    </div>
+                                    <div class="package-features">
+                                        <label>Paket Özellikleri</label>
+                                        <div class="feature-item">
+                                            <input type="text" placeholder="Özellik ekleyin">
+                                            <button type="button" class="btn-icon">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="package-footer">
+                                        <label>Teslim Süresi</label>
+                                        <div class="delivery-input">
+                                            <input type="number" min="1" placeholder="1" required>
+                                            <span class="unit">gün</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-delete-package">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            <button type="button" class="btn-add-package">
+                                <i class="fas fa-plus"></i>
+                                <span>Yeni Paket Ekle</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Gereksinimler -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-clipboard-list"></i> Müşteri Gereksinimleri</h2>
+                        
+                        <div class="form-group">
+                            <label for="requirements">Müşterilerden İstenen Bilgiler</label>
+                            <div class="requirements-list">
+                                <div class="requirement-item">
+                                    <input type="text" placeholder="Gereksinim ekleyin">
+                                    <button type="button" class="btn-icon">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="form-helper">Hizmeti başlatmak için müşterilerden hangi bilgilere ihtiyacınız olduğunu belirtin</p>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-outline">
+                            <i class="fas fa-save"></i>
+                            Taslak Olarak Kaydet
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-check"></i>
+                            Hizmeti Yayınla
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

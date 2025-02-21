@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesajlaşma | FreelanceHub</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/chat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">freelancehub</a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#" class="nav-item">Satıcı Ol</a>
+                    <a href="login.html" class="nav-item">Giriş Yap</a>
+                    <a href="register.html" class="btn-primary">Üye Ol</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="chat-page">
+        <div class="container">
+            <div class="chat-container">
+                <!-- Sol Taraf - Hizmet Bilgisi -->
+                <div class="service-info">
+                    <div class="service-card">
+                        <img src="https://placehold.co/400x200" alt="Hizmet" class="service-image">
+                        <div class="service-details">
+                            <h2>Modern ve Minimalist Logo Tasarımı</h2>
+                            <div class="seller-info">
+                                <img src="https://placehold.co/40x40" alt="Satıcı" class="seller-avatar">
+                                <span class="seller-name">DesignPro</span>
+                            </div>
+                            <div class="service-price">
+                                <span class="price">₺750</span>
+                                <span class="delivery">3 gün içinde teslimat</span>
+                            </div>
+                            <a href="order.html?service=modern-logo-tasarimi&seller=designpro&price=750" class="btn-primary btn-block">
+                                <i class="fas fa-shopping-cart"></i>
+                                Hemen Sipariş Ver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Taraf - Mesajlaşma -->
+                <div class="chat-section">
+                    <div class="chat-header">
+                        <div class="chat-user">
+                            <img src="https://placehold.co/40x40" alt="Satıcı" class="user-avatar">
+                            <div class="user-info">
+                                <h3>DesignPro</h3>
+                                <span class="user-status online">Çevrimiçi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message-received">
+                            <p>Merhaba! Size nasıl yardımcı olabilirim?</p>
+                            <span class="message-time">14:30</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <textarea placeholder="Mesajınızı yazın..." rows="3"></textarea>
+                        <button class="btn-primary btn-send">
+                            <i class="fas fa-paper-plane"></i>
+                            Gönder
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Mevcut footer içeriği -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chatMessages');
+            const chatInput = document.querySelector('.chat-input textarea');
+            const sendButton = document.querySelector('.btn-send');
+
+            function sendMessage(message) {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'message-sent';
+                messageElement.innerHTML = `
+                    <p>${message}</p>
+                    <span class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                `;
+                chatMessages.appendChild(messageElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            sendButton.addEventListener('click', function() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    sendMessage(message);
+                    chatInput.value = '';
+                    chatInput.focus();
+                }
+            });
+
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    const message = this.value.trim();
+                    if (message) {
+                        sendMessage(message);
+                        this.value = '';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -198,12 +198,38 @@
                             </div>
                         </div>
 
+                        <div class="seller-chat">
+                            <div class="chat-header">
+                                <h3>Satıcı ile İletişime Geç</h3>
+                                <p>Sipariş öncesi sorularınızı sorabilirsiniz</p>
+                            </div>
+                            <div class="chat-messages" id="chatMessages">
+                                <!-- Mesajlar buraya dinamik olarak eklenecek -->
+                            </div>
+                            <div class="chat-input">
+                                <textarea placeholder="Mesajınızı yazın..." rows="3"></textarea>
+                                <button class="btn-primary btn-send">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Gönder
+                                </button>
+                            </div>
+                        </div>
+
                         <div class="pricing-box">
                             <div class="pricing-header">
                                 <span class="price">₺750</span>
                                 <span class="delivery">3 gün içinde teslimat</span>
                             </div>
-                            <a href="#" class="btn-primary">Hemen Sipariş Ver</a>
+                            <div class="action-buttons">
+                                <a href="order.html?service=modern-logo-tasarimi&seller=designpro&price=750" class="btn-primary btn-block">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Hemen Sipariş Ver
+                                </a>
+                                <a href="chat.html?seller=designpro&service=modern-logo-tasarimi" class="btn-outline btn-block">
+                                    <i class="fas fa-comment"></i>
+                                    Satıcı ile Mesajlaş
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

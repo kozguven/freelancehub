@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipariş Ver | FreelanceHub</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header aynı kalacak -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">freelancehub</a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#" class="nav-item">Satıcı Ol</a>
+                    <a href="login.html" class="nav-item">Giriş Yap</a>
+                    <a href="register.html" class="btn-primary">Üye Ol</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="order-page">
+        <div class="container">
+            <div class="order-grid">
+                <!-- Sol Taraf - Sipariş Formu -->
+                <div class="order-form-section">
+                    <h1>Sipariş Detayları</h1>
+                    
+                    <!-- Hizmet Özeti -->
+                    <div class="service-summary">
+                        <img src="https://placehold.co/100x100" alt="Hizmet" class="service-image">
+                        <div class="service-info">
+                            <h2>Modern ve Minimalist Logo Tasarımı</h2>
+                            <p class="seller-name">Satıcı: DesignPro</p>
+                        </div>
+                    </div>
+
+                    <!-- Sipariş Formu -->
+                    <form class="order-form">
+                        <div class="form-group">
+                            <label for="requirements">Proje Gereksinimleri</label>
+                            <textarea id="requirements" rows="5" placeholder="Projeniz için özel gereksinimlerinizi detaylı bir şekilde açıklayın..."></textarea>
+                            <p class="form-helper">Logo için renk tercihleri, stil, referanslar gibi detayları belirtebilirsiniz.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Teslimat Süresi</label>
+                            <div class="delivery-options">
+                                <label class="delivery-option">
+                                    <input type="radio" name="delivery" value="standard" checked>
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <span class="option-title">Standart Teslimat</span>
+                                            <span class="option-price">₺750</span>
+                                        </div>
+                                        <span class="option-duration">3 iş günü</span>
+                                    </div>
+                                </label>
+                                <label class="delivery-option">
+                                    <input type="radio" name="delivery" value="express">
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <span class="option-title">Hızlı Teslimat</span>
+                                            <span class="option-price">₺1000</span>
+                                        </div>
+                                        <span class="option-duration">1 iş günü</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ek Hizmetler</label>
+                            <div class="extra-services">
+                                <label class="extra-service">
+                                    <input type="checkbox" name="extras" value="source">
+                                    <div class="service-content">
+                                        <div class="service-header">
+                                            <span class="service-title">Kaynak Dosyalar</span>
+                                            <span class="service-price">+₺250</span>
+                                        </div>
+                                        <span class="service-description">AI, EPS, PSD formatlarında kaynak dosyalar</span>
+                                    </div>
+                                </label>
+                                <label class="extra-service">
+                                    <input type="checkbox" name="extras" value="social">
+                                    <div class="service-content">
+                                        <div class="service-header">
+                                            <span class="service-title">Sosyal Medya Paketi</span>
+                                            <span class="service-price">+₺150</span>
+                                        </div>
+                                        <span class="service-description">Tüm sosyal medya platformları için optimize edilmiş boyutlar</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Sağ Taraf - Sipariş Özeti -->
+                <div class="order-summary-section">
+                    <div class="summary-card">
+                        <h2>Sipariş Özeti</h2>
+                        
+                        <div class="summary-items">
+                            <div class="summary-item">
+                                <span>Temel Hizmet</span>
+                                <span>₺750</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Hızlı Teslimat</span>
+                                <span>₺250</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Kaynak Dosyalar</span>
+                                <span>₺250</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Sosyal Medya Paketi</span>
+                                <span>₺150</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Toplam</span>
+                            <span>₺1,400</span>
+                        </div>
+
+                        <div class="summary-delivery">
+                            <i class="fas fa-clock"></i>
+                            <span>Tahmini Teslimat: 20 Şubat 2025</span>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-large">Siparişi Tamamla</button>
+
+                        <div class="summary-footer">
+                            <p>Siparişi tamamlayarak <a href="#">Hizmet Şartları</a>'nı kabul etmiş olursunuz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer aynı kalacak -->
+    <footer>
+        <!-- Mevcut footer içeriği -->
+    </footer>
+</body>
+</html> 

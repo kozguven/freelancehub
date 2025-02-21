@@ -1,0 +1,101 @@
+/* Earnings specific styles */
+.earnings-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.earnings-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.earnings-card h3 {
+    font-size: 1rem;
+    color: #6c757d;
+    margin: 0 0 0.5rem 0;
+}
+
+.earnings-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+
+.earnings-trend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.trend-up {
+    color: #198754;
+}
+
+.trend-down {
+    color: #dc3545;
+}
+
+.earnings-chart {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.transaction-filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-select {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    color: #495057;
+}
+
+.transaction-amount {
+    font-weight: 600;
+}
+
+.amount-positive {
+    color: #198754;
+}
+
+.amount-negative {
+    color: #dc3545;
+}
+
+.transaction-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-completed {
+    background-color: #198754;
+}
+
+.status-pending {
+    background-color: #ffc107;
+} 

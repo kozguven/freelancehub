@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancerlar | FreelanceHub</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/freelancers.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header bölümü categories.html ile aynı -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">freelancehub</a>
+                <div class="nav-search">
+                    <input type="text" placeholder="Hangi freelancer'ı arıyorsunuz?">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Kategoriler <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="categories.html">Grafik & Tasarım</a>
+                            <a href="categories.html">Dijital Pazarlama</a>
+                            <a href="categories.html">Yazılım & Teknoloji</a>
+                            <a href="categories.html">Yazı & Çeviri</a>
+                            <a href="categories.html">Video & Animasyon</a>
+                            <a href="freelancers.html" class="special-link">Tüm Freelancerlar</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">TR <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">English</a>
+                            <a href="#">Deutsch</a>
+                            <a href="#">Español</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-item">Satıcı Ol</a>
+                    <a href="login.html" class="nav-item">Giriş Yap</a>
+                    <a href="register.html" class="btn-primary">Üye Ol</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="categories-banner">
+            <div class="container">
+                <h1>Freelancerlar</h1>
+                <p>İhtiyacınız olan hizmetleri kategoriler halinde keşfedin</p>
+            </div>
+        </section>
+
+        <div class="categories-strip">
+            <div class="container categories-container">
+                <div class="categories-scroll">
+                    <a href="freelancers.html" class="category-tag active">Tüm Kategoriler</a>
+                    <a href="freelancers.html?category=design" class="category-tag">Grafik & Tasarım</a>
+                    <a href="freelancers.html?category=marketing" class="category-tag">Dijital Pazarlama</a>
+                    <a href="freelancers.html?category=software" class="category-tag">Yazılım & Teknoloji</a>
+                    <a href="freelancers.html?category=writing" class="category-tag">Yazı & Çeviri</a>
+                    <a href="freelancers.html?category=video" class="category-tag">Video & Animasyon</a>
+                    <a href="freelancers.html?category=music" class="category-tag">Müzik & Ses</a>
+                    <a href="freelancers.html?category=business" class="category-tag">İş & Yönetim</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="categories-filters">
+            <div class="container">
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <span class="filter-label">Sıralama:</span>
+                        <select class="filter-select">
+                            <option value="rating">En Yüksek Puan</option>
+                            <option value="experience">En Deneyimli</option>
+                            <option value="projects">En Çok Proje</option>
+                            <option value="newest">En Yeni Üyeler</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Uzmanlık Alanı:</span>
+                        <select class="filter-select">
+                            <option value="all">Tüm Alanlar</option>
+                            <option value="design">Grafik & Tasarım</option>
+                            <option value="software">Yazılım & Teknoloji</option>
+                            <option value="marketing">Dijital Pazarlama</option>
+                            <option value="writing">Yazı & Çeviri</option>
+                            <option value="video">Video & Animasyon</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="freelancers-grid">
+            <div class="container">
+                <div class="freelancers-list">
+                    <!-- Freelancer 1 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer1.jpg" alt="Ahmet Yılmaz" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                                <span class="badge top-rated">En İyi</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Ahmet Yılmaz</h3>
+                            <p class="freelancer-title">Senior UI/UX Tasarımcı</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.8 (156 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>245 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>5 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Adobe XD</span>
+                                <span class="skill-tag">Sketch</span>
+                                <span class="skill-tag">UI Design</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 2 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer2.jpg" alt="Zeynep Kaya" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Zeynep Kaya</h3>
+                            <p class="freelancer-title">Full Stack Developer</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0 (98 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>178 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>4 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">TypeScript</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 3 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer3.jpg" alt="Mehmet Demir" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge top-rated">En İyi</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Mehmet Demir</h3>
+                            <p class="freelancer-title">SEO Uzmanı</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (124 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>156 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>3 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">SEO</span>
+                                <span class="skill-tag">Google Ads</span>
+                                <span class="skill-tag">Analytics</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 4 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer4.jpg" alt="Ayşe Yıldız" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Ayşe Yıldız</h3>
+                            <p class="freelancer-title">İçerik Yazarı</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (87 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>134 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>3 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">Blog Yazarlığı</span>
+                                <span class="skill-tag">Copywriting</span>
+                                <span class="skill-tag">SEO Yazarlığı</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 5 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer5.jpg" alt="Can Özkan" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                                <span class="badge top-rated">En İyi</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Can Özkan</h3>
+                            <p class="freelancer-title">Motion Designer</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (92 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>167 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>4 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">After Effects</span>
+                                <span class="skill-tag">Cinema 4D</span>
+                                <span class="skill-tag">Animation</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 6 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer6.jpg" alt="Elif Demir" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Elif Demir</h3>
+                            <p class="freelancer-title">Sosyal Medya Uzmanı</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.7 (143 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>198 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>3 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">Instagram</span>
+                                <span class="skill-tag">Facebook</span>
+                                <span class="skill-tag">TikTok</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 7 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer7.jpg" alt="Burak Şahin" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge top-rated">En İyi</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Burak Şahin</h3>
+                            <p class="freelancer-title">iOS Developer</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0 (76 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>89 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>5 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">Swift</span>
+                                <span class="skill-tag">SwiftUI</span>
+                                <span class="skill-tag">iOS</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 8 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer8.jpg" alt="Selin Yılmaz" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Selin Yılmaz</h3>
+                            <p class="freelancer-title">İllüstratör</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (112 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>145 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>4 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">Illustrator</span>
+                                <span class="skill-tag">Procreate</span>
+                                <span class="skill-tag">Digital Art</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 9 -->
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer9.jpg" alt="Mert Aydın" class="freelancer-avatar">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                                <span class="badge top-rated">En İyi</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Mert Aydın</h3>
+                            <p class="freelancer-title">3D Modelleme Uzmanı</p>
+                            <div class="freelancer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (83 değerlendirme)</span>
+                            </div>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>123 Proje</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>6 Yıl Deneyim</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">Blender</span>
+                                <span class="skill-tag">Maya</span>
+                                <span class="skill-tag">3D Max</span>
+                            </div>
+                            <div class="freelancer-actions">
+                                <a href="expert-detail.html" class="btn-primary">Profili İncele</a>
+                                <a href="#" class="btn-secondary">Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer bölümü diğer sayfalarla aynı -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Kategoriler</h4>
+                    <a href="categories.html">Grafik & Tasarım</a>
+                    <a href="categories.html">Dijital Pazarlama</a>
+                    <a href="categories.html">Yazılım & Teknoloji</a>
+                    <a href="categories.html">Yazı & Çeviri</a>
+                    <a href="categories.html">Video & Animasyon</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Hakkımızda</h4>
+                    <a href="#">Şirketimiz</a>
+                    <a href="#">Kariyer</a>
+                    <a href="#">Basın</a>
+                    <a href="#">İletişim</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Topluluk</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Forum</a>
+                    <a href="#">Podcast</a>
+                    <a href="#">Affiliate Program</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Destek</h4>
+                    <a href="#">Yardım Merkezi</a>
+                    <a href="#">Güvenlik</a>
+                    <a href="#">Satıcı Rehberi</a>
+                    <a href="#">Alıcı Rehberi</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <span>© 2025 FreelanceHub. Tüm hakları saklıdır.</span>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

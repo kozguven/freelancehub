@@ -1,66 +1,201 @@
 .expert-detail {
-    padding: 40px 0;
+    padding: 0;
+}
+
+.expert-banner {
+    background: var(--bg-light);
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb i {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.breadcrumb span {
+    color: var(--text-dark);
 }
 
 .expert-profile {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
 }
 
 .expert-header {
+    padding: 30px;
     display: flex;
-    padding: 32px;
-    border-bottom: 1px solid #eee;
+    gap: 30px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .expert-avatar {
-    width: 200px;
-    height: 200px;
-    margin-right: 32px;
+    position: relative;
     flex-shrink: 0;
 }
 
 .expert-avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
     object-fit: cover;
+}
+
+.expert-badges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.badge.pro {
+    background: var(--primary-color);
+}
+
+.badge.pro::before {
+    content: '\f005'; /* yıldız ikonu */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.7rem;
+}
+
+.badge.top-rated {
+    background: var(--success-color);
+}
+
+.badge.top-rated::before {
+    content: '\f091'; /* kupa ikonu */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.7rem;
 }
 
 .expert-info {
     flex: 1;
 }
 
-.expert-info h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
+.expert-info-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.expert-title-area h1 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
 }
 
 .expert-title {
-    color: #666;
-    font-size: 18px;
-    margin-bottom: 24px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.expert-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.expert-actions .btn-primary,
+.expert-actions .btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
 }
 
 .expert-stats {
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
 }
 
 .stat-item {
     display: flex;
     align-items: center;
     gap: 8px;
+    color: var(--text-dark);
 }
 
 .stat-item i {
-    color: #ffd700;
+    color: var(--primary-color);
 }
 
 .stat-label {
-    color: #666;
-    font-size: 14px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 30px;
+    background: var(--border-color);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .expert-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .expert-info-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .expert-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stat-divider {
+        display: none;
+    }
 }
 
 .expert-description {

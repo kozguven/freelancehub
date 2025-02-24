@@ -63,12 +63,31 @@
 
     <main>
         <section class="hero">
+            <div class="hero-background">
+                <video autoplay muted loop playsinline id="heroVideo">
+                    <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+                </video>
+            </div>
             <div class="container hero-container">
                 <div class="hero-content">
                     <h1>İşletmeniz için mükemmel<br>freelance hizmetleri bulun</h1>
                     <div class="search-box">
                         <input type="text" placeholder='Örneğin "Logo Tasarımı"'>
                         <button type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="platform-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Aktif Freelancer</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100K+</span>
+                            <span class="stat-label">Tamamlanan Proje</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Müşteri Memnuniyeti</span>
+                        </div>
                     </div>
                     <div class="popular-tags">
                         <span>Popüler:</span>
@@ -81,9 +100,127 @@
             </div>
         </section>
 
+        <section class="how-it-works">
+            <div class="container">
+                <h2>FreelanceHub ile Çalışmak Çok Kolay</h2>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Uzmanı Bul</h3>
+                        <p>Binlerce yetenekli freelancer arasından en uygun uzmanı seçin</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Detaylı profiller</li>
+                            <li><i class="fas fa-check"></i> Gerçek değerlendirmeler</li>
+                            <li><i class="fas fa-check"></i> Örnek çalışmalar</li>
+                        </ul>
+                    </div>
+                    <div class="step-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Anlaşmayı Yap</h3>
+                        <p>Proje detaylarını konuşun ve güvenli ödeme sistemi ile anlaşmayı başlatın</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Güvenli ödeme</li>
+                            <li><i class="fas fa-check"></i> Net fiyatlandırma</li>
+                            <li><i class="fas fa-check"></i> Sözleşme koruması</li>
+                        </ul>
+                    </div>
+                    <div class="step-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Sonucu Gör</h3>
+                        <p>Projenizi takip edin ve mükemmel sonucu teslim alın</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Revizyon hakkı</li>
+                            <li><i class="fas fa-check"></i> 7/24 destek</li>
+                            <li><i class="fas fa-check"></i> Garanti sistemi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="success-stories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Başarı Hikayeleri</h2>
+                    <p class="section-subtitle">Müşterilerimizin deneyimleri</p>
+                </div>
+                <div class="testimonials-container">
+                    <div class="testimonials-slider">
+                        <div class="testimonial-card">
+                            <div class="testimonial-image">
+                                <img src="assets/images/testimonials/client1.jpg" alt="Müşteri">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"FreelanceHub sayesinde markamız için harika bir logo tasarımı aldık. Süreç çok profesyonelce ilerledi."</p>
+                                <div class="testimonial-author">
+                                    <strong>Ayşe Yılmaz</strong>
+                                    <span>Startup Kurucusu</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-image">
+                                <img src="assets/images/testimonials/client2.jpg" alt="Müşteri">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"Web sitemizin SEO çalışmaları sonrası trafiğimiz %150 arttı. Harika sonuçlar aldık."</p>
+                                <div class="testimonial-author">
+                                    <strong>Mehmet Demir</strong>
+                                    <span>E-ticaret Yöneticisi</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-image">
+                                <img src="assets/images/testimonials/client3.jpg" alt="Müşteri">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"Mobil uygulamamızı 1 ay gibi kısa bir sürede tamamladılar. Çok memnun kaldık."</p>
+                                <div class="testimonial-author">
+                                    <strong>Ali Kaya</strong>
+                                    <span>Teknoloji Girişimcisi</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-image">
+                                <img src="assets/images/testimonials/client1.jpg" alt="Müşteri">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"FreelanceHub sayesinde markamız için harika bir logo tasarımı aldık. Süreç çok profesyonelce ilerledi."</p>
+                                <div class="testimonial-author">
+                                    <strong>Ayşe Yılmaz</strong>
+                                    <span>Startup Kurucusu</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="prev-slide"><i class="fas fa-arrow-left"></i></button>
+                        <button class="next-slide"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="featured-categories">
             <div class="container">
-                <h2>Öne Çıkan Kategoriler</h2>
+                <div class="section-header">
+                    <h2>Öne Çıkan Kategoriler</h2>
+                    <a href="categories.html" class="btn-secondary">Tüm Kategorileri Gör <i class="fas fa-arrow-right"></i></a>
+                </div>
                 <div class="category-grid">
                     <a href="categories.html" class="category-card">
                         <div class="category-image">
@@ -202,34 +339,233 @@
 
         <section class="why-us">
             <div class="container">
-                <h2>Neden FreelanceHub?</h2>
+                <div class="section-header">
+                    <h2>Neden FreelanceHub?</h2>
+                    <p class="section-subtitle">Türkiye'nin en büyük freelance platformunda güvenle çalışın</p>
+                </div>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Güvenli Ödeme</h3>
-                        <p>İş tamamlanana kadar ödemeniz güvende</p>
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>%100 Güvenli Ödeme</h3>
+                        <p>İş tamamlanana kadar ödemeniz güvende kalır. Memnun kalmazsanız iade garantisi sunuyoruz.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Escrow sistemi</li>
+                            <li><i class="fas fa-check"></i> SSL güvenliği</li>
+                            <li><i class="fas fa-check"></i> İade garantisi</li>
+                        </ul>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-clock"></i>
-                        <h3>Hızlı Teslimat</h3>
-                        <p>Projeleriniz zamanında teslim edilir</p>
+                        <div class="feature-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3>Seçkin Uzmanlar</h3>
+                        <p>Titizlikle seçilmiş ve onaylanmış profesyonel freelancerlar ile çalışın.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Portfolyo kontrolü</li>
+                            <li><i class="fas fa-check"></i> Kimlik doğrulama</li>
+                            <li><i class="fas fa-check"></i> Yetenek testleri</li>
+                        </ul>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-headset"></i>
-                        <h3>7/24 Destek</h3>
-                        <p>Her zaman yanınızdayız</p>
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>7/24 Canlı Destek</h3>
+                        <p>Süreç boyunca yanınızdayız. Türkçe destek ekibimiz her an yardıma hazır.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Canlı sohbet</li>
+                            <li><i class="fas fa-check"></i> Telefon desteği</li>
+                            <li><i class="fas fa-check"></i> E-posta desteği</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta parallax">
+            <div class="cta-overlay"></div>
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Hemen Başlayın</h2>
+                    <p>Binlerce yetenekli freelancer ile tanışın</p>
+                    <div class="cta-buttons">
+                        <a href="categories.html" class="btn-primary">Hizmetleri Keşfet</a>
+                        <a href="#" class="btn-secondary">Satıcı Ol</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta">
+        <section class="platform-statistics">
             <div class="container">
-                <h2>Hemen Başlayın</h2>
-                <p>Binlerce yetenekli freelancer ile tanışın</p>
-                <div class="cta-buttons">
-                    <a href="categories.html" class="btn-primary">Hizmetleri Keşfet</a>
-                    <a href="#" class="btn-secondary">Satıcı Ol</a>
+                <div class="section-header">
+                    <h2>Rakamlarla FreelanceHub</h2>
+                    <p class="section-subtitle">Her gün büyüyen topluluğumuzun bir parçası olun</p>
+                </div>
+                <div class="statistics-grid">
+                    <div class="statistic-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="250000">0</span>
+                            <span class="plus">+</span>
+                        </div>
+                        <h3>Aktif Kullanıcı</h3>
+                        <p>Türkiye'nin en büyük freelancer topluluğu</p>
+                    </div>
+                    <div class="statistic-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="100000">0</span>
+                            <span class="plus">+</span>
+                        </div>
+                        <h3>Tamamlanan Proje</h3>
+                        <p>Başarıyla tamamlanan projeler</p>
+                    </div>
+                    <div class="statistic-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="50">0</span>
+                            <span class="plus">+</span>
+                        </div>
+                        <h3>Ülke</h3>
+                        <p>Global freelancer ağı</p>
+                    </div>
+                    <div class="statistic-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-number">
+                            <span class="counter decimal" data-target="4.8">0</span>
+                        </div>
+                        <h3>Ortalama Puan</h3>
+                        <p>Müşteri memnuniyeti</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Öne Çıkan Projeler Galerisi -->
+        <section class="featured-projects">
+            <div class="container">
+                <h2>Öne Çıkan Projeler</h2>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="design">Tasarım</button>
+                    <button class="filter-btn" data-filter="development">Yazılım</button>
+                    <button class="filter-btn" data-filter="marketing">Pazarlama</button>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card" data-category="design">
+                        <div class="project-image">
+                            <img src="assets/images/projects/project1.jpg" alt="E-ticaret Web Tasarımı">
+                            <div class="project-overlay">
+                                <span class="project-category">Web Tasarım</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>E-ticaret Web Tasarımı</h3>
+                            <p>Modern ve kullanıcı dostu e-ticaret sitesi</p>
+                            <div class="project-meta">
+                                <span class="budget">₺15,000</span>
+                                <span class="duration">2 Hafta</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="development">
+                        <div class="project-image">
+                            <img src="assets/images/projects/project2.jpg" alt="Mobil Uygulama">
+                            <div class="project-overlay">
+                                <span class="project-category">Mobil Uygulama</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Fitness Takip Uygulaması</h3>
+                            <p>iOS ve Android için fitness uygulaması</p>
+                            <div class="project-meta">
+                                <span class="budget">₺25,000</span>
+                                <span class="duration">1 Ay</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- En İyi Freelancerlar -->
+        <section class="top-freelancers">
+            <div class="container">
+                <h2>En İyi Freelancerlar</h2>
+                <div class="freelancers-grid">
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer1.jpg" alt="Freelancer">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                                <span class="badge top-rated">En İyi</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Ali Yılmaz</h3>
+                            <p class="freelancer-title">UI/UX Tasarımcı</p>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9 (120)</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>85 Proje</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Adobe XD</span>
+                                <span class="skill-tag">UI Design</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-secondary">Profili Gör</a>
+                    </div>
+
+                    <div class="freelancer-card">
+                        <div class="freelancer-header">
+                            <img src="assets/images/freelancers/freelancer2.jpg" alt="Freelancer">
+                            <div class="freelancer-badges">
+                                <span class="badge pro">PRO</span>
+                            </div>
+                        </div>
+                        <div class="freelancer-info">
+                            <h3>Zeynep Kaya</h3>
+                            <p class="freelancer-title">Full Stack Developer</p>
+                            <div class="freelancer-stats">
+                                <div class="stat">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8 (95)</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>62 Proje</span>
+                                </div>
+                            </div>
+                            <div class="freelancer-skills">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-secondary">Profili Gör</a>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <a href="#" class="btn-primary">Tüm Freelancerları Gör</a>
                 </div>
             </div>
         </section>
@@ -282,3 +618,108 @@
                 </div>
             </div>
         </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('.counter');
+        const speed = 500;
+
+        const animateCounter = (counter) => {
+            const target = parseFloat(counter.getAttribute('data-target'));
+            const isDecimal = counter.classList.contains('decimal');
+            let count = 0;
+
+            const updateCount = () => {
+                const increment = target / speed;
+                
+                if(count < target) {
+                    count += increment;
+                    counter.innerText = isDecimal ? 
+                        Math.min(count, target).toFixed(1) : 
+                        Math.floor(Math.min(count, target)).toLocaleString('tr-TR');
+                    setTimeout(updateCount, 5);
+                } else {
+                    counter.innerText = isDecimal ? 
+                        target.toFixed(1) : 
+                        target.toLocaleString('tr-TR');
+                }
+            };
+
+            updateCount();
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    animateCounter(counter);
+                    observer.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
+
+        const slider = document.querySelector('.testimonials-slider');
+        const prevBtn = document.querySelector('.prev-slide');
+        const nextBtn = document.querySelector('.next-slide');
+        const cards = document.querySelectorAll('.testimonial-card');
+        
+        let currentSlide = 0;
+        const totalSlides = cards.length;
+        const slideWidth = 100 / 3;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+            
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide >= totalSlides - 3;
+            
+            prevBtn.style.opacity = currentSlide === 0 ? "0.5" : "1";
+            nextBtn.style.opacity = currentSlide >= totalSlides - 3 ? "0.5" : "1";
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlider();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 3) {
+                currentSlide++;
+                updateSlider();
+            }
+        });
+
+        let autoSlideInterval = setInterval(() => {
+            if (currentSlide < totalSlides - 3) {
+                currentSlide++;
+            } else {
+                currentSlide = 0;
+            }
+            updateSlider();
+        }, 5000);
+
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(() => {
+                if (currentSlide < totalSlides - 3) {
+                    currentSlide++;
+                } else {
+                    currentSlide = 0;
+                }
+                updateSlider();
+            }, 5000);
+        });
+
+        updateSlider();
+    });
+    </script>
+</body>
+</html>
